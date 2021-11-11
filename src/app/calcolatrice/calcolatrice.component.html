@@ -1,0 +1,35 @@
+
+    <mat-card>
+      <mat-card-title class="firstCard">Calcolatrice</mat-card-title>
+      <mat-card-content>
+          <mat-form-field>
+            <input matInput [(ngModel)]="firstNum" id="invReference" placeholder="Inserire primo numero" #ref>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [(ngModel)]="secondNum" id="invId" placeholder="Inserire secondo numero"  #id>
+          </mat-form-field>
+     
+            <mat-form-field >
+                <mat-label>Scegli operazione</mat-label>
+                    <mat-select [(ngModel)]="operation"> 
+                        <mat-option value="Somma">Somma</mat-option>
+                        <mat-option value="Sottrazione">Sottrazione</mat-option>
+                        <mat-option value="Moltiplicazione">Moltiplicazione</mat-option>
+                        <mat-option value="Divisione">Divisione</mat-option>
+                    </mat-select>
+            </mat-form-field>
+         
+            <button mat-stroked-button color="primary" type="start" class="successButton" id="invSearch" (click)="btnClk()" title="Clicca per il risultato">START</button>
+
+            <p><b>Risultato</b>: {{result}}</p>
+      </mat-card-content>
+    </mat-card>
+
+   <mat-nav-list>
+              <a mat-list-item *ngFor="let res of results"> 
+                  {{ res }} 
+              <button mat-stroked-button color="primary" type="copia" class="successButton" id="copy" (click)="btnCopy(res)" title="Clicca per il risultato">COPIA1 </button> 
+              <button mat-stroked-button color="primary" type="copia" class="successButton" id="copy" (click)="btnCopy2(res)" title="Clicca per il risultato">COPIA2 </button>   
+            </a>
+
+           </mat-nav-list>

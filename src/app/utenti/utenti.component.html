@@ -1,0 +1,31 @@
+<form (submit)="search(ref, id, forename, surname, postcode)" action="#">
+    <mat-card>
+      <mat-card-title class="firstCard">Utenti</mat-card-title>
+      <mat-card-content>
+      
+          <mat-form-field>
+            <input matInput [(ngModel)]="firstNum" id="invReference" placeholder="Inserire nome" #ref>
+         
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput id="invId" placeholder="Inserire email"  #id>
+          </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Scegli referente</mat-label>
+    <mat-select>
+      <mat-option value="referente1">referente1</mat-option>
+      <mat-option value="referente2">referente2</mat-option>
+      <mat-option value="referente3">referente3</mat-option>
+      <mat-option value="referente4">referente4</mat-option>
+      <mat-option value="referente5">referente5</mat-option>
+    </mat-select>
+  </mat-form-field>
+         
+<button mat-stroked-button color="primary" type="start" class="successButton" id="invSearch" click="btnclk()"title="Clicca per il risultato">AGGIUNGI</button>
+      
+
+      </mat-card-content>
+    </mat-card>
+  </form>
+  
