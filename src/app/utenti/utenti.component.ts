@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';;
+import { ApiService } from '../Services/api.service';
 
 @Component({
   selector: 'app-utenti',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UtentiComponent implements OnInit {
   username : string;
-  email: string;
+//  email: string;
   option: string;
   referente: string;
   result:  string;
   results: string[] = [];
+  disableBtn: boolean = true;
+  @Input()
+  email: string | boolean
 
   constructor() { }
 
@@ -43,11 +47,11 @@ export class UtentiComponent implements OnInit {
  btnCanc(res){
  this.results.splice(res,1);
  // this.results.splice(this.results.indexOf(res),1)
-  // delete this.result;
+ // delete this.result;
  }
 
  validateEmail(email) {
   const regularExpression = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return regularExpression.test(String(email).toLowerCase());
+  this.disableBtn = !regularExpression.test(String(email).toLowerCase());
  }
 }

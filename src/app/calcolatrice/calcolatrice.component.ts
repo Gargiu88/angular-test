@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiService } from '../Services/api.service';
 
 @Component({
   selector: 'app-calcolatrice',

@@ -3,12 +3,13 @@
       <mat-card-content>
       
           <mat-form-field>
-            <input matInput [(ngModel)]="username" id="invReference" placeholder="Inserire username" #ref>
+            <input matInput [(ngModel)]="username" id="user" placeholder="Inserire username">
          
           </mat-form-field>
           <mat-form-field>
-            <input matInput ngModel [email]="true" id="invReference" placeholder="Inserire email" #ref>
+            <input matInput type="email" [email]="true" [(ngModel)]="email" (change)="validateEmail(email)" id="mail" placeholder="Inserire email">
           </mat-form-field>
+         
 
   <mat-form-field >
     <mat-label>Scegli referente</mat-label>
@@ -21,7 +22,8 @@
     </mat-select>
   </mat-form-field>
          
-<button mat-stroked-button color="primary" type="start" class="successButton" id="invSearch" (click)="btnAdd()"title="Clicca">AGGIUNGI</button>
+<button mat-stroked-button color="primary" type="start" class="successButton" id="invSearch" (click)="btnAdd()" 
+title="Clicca" [disabled]="disableBtn || !email || !username || !option">AGGIUNGI</button>
       
 <p><b>Utente: </b>{{result}}</p>
       </mat-card-content>

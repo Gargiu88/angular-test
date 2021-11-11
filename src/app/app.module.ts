@@ -15,6 +15,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'; 
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list'; 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
-    MatSelectModule,MatInputModule,MatButtonModule,FormsModule,MatListModule
+    MatSelectModule,MatInputModule,MatButtonModule,FormsModule,MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
